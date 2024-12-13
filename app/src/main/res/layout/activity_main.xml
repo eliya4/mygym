@@ -45,10 +45,10 @@
         android:layout_below="@id/header"
         android:layout_margin="16dp"
         android:background="@drawable/rounded_button"
-        android:text="TODAY'S WORKOUT\n10:45AM - Leg training in the gym"
-        android:textColor="@color/white"
         android:drawableEnd="@drawable/ic_alarm"
-        android:drawablePadding="8dp" />
+        android:drawablePadding="8dp"
+        android:text="@string/todays_workout"
+        android:textColor="@color/white" />
 
     <!-- Calories Section -->
     <LinearLayout
