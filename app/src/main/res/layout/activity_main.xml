@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Header Section -->
+
+    <!-- Today's Workout Section -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="1dp"
+            android:text="User:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/search_exercises"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/search_box_bg"
+            android:drawableEnd="@drawable/ic_search"
+            android:hint="Search for exercises"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/todays_workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_button"
+        android:text="TODAY'S WORKOUT\n10:45AM - Leg training in the gym"
+        android:textColor="@color/white"
+        android:drawableEnd="@drawable/ic_alarm"
+        android:drawablePadding="8dp" />
+
+    <!-- Calories Section -->
+    <LinearLayout
+        android:id="@+id/calories_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todays_workout"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1,800\nDaily calories"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="- 300\nCalories eaten"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+ 200\nCalories burned"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="= 1,700\nCalories left"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <!-- Food Section -->
+    <LinearLayout
+        android:id="@+id/food_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calories_section"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/food_breakfast"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/breakfast" />
+
+        <ImageView
+            android:id="@+id/food_lunch"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/lunch" />
+
+        <ImageView
+            android:id="@+id/food_dinner"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/dinner" />
+
+    </LinearLayout>
+
+    <!-- Map Section -->
+    <FrameLayout
+        android:id="@+id/map_section"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/food_section"
+        android:padding="16dp">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="384dp"
+            android:layout_height="165dp" />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/light_gray">
+
+        <ImageButton
+            android:id="@+id/home_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/add_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/profile_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
