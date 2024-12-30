@@ -17,8 +17,8 @@
         <!-- Logo Icon -->
         <ImageView
             android:id="@+id/logoImage"
-            android:layout_width="160dp"
-            android:layout_height="129dp"
+            android:layout_width="178dp"
+            android:layout_height="151dp"
             android:contentDescription="@string/logo_desc"
             android:src="@drawable/ic_gym_logo" />
 

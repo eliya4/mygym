@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <!-- Header Section -->
@@ -38,19 +39,27 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/todays_workout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:layout_margin="16dp"
-        android:background="@drawable/rounded_button"
-        android:drawableEnd="@drawable/ic_alarm"
-        android:drawablePadding="8dp"
-        android:text="@string/todays_workout"
-        android:textColor="@color/white" />
-
     <!-- Calories Section -->
+    \\לשי :איך אני מוסיפה שיהיה שם את התזכורות
+
+    <TextView
+        android:id="@+id/todays_workout"
+        android:layout_width="383dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/header"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:drawablePadding="8dp"
+        android:text="today workout:"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
     <LinearLayout
         android:id="@+id/calories_section"
         android:layout_width="match_parent"
@@ -74,7 +83,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="+ 200\nCalories burned"
@@ -90,6 +99,10 @@
     </LinearLayout>
 
     <!-- Food Section -->
+
+    <!-- Map Section -->
+
+    <!-- Food Section -->
     <LinearLayout
         android:id="@+id/food_section"
         android:layout_width="match_parent"
@@ -98,30 +111,101 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/food_breakfast"
+        <!-- Breakfast -->
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/breakfast" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/food_lunch"
+            <ImageButton
+                android:id="@+id/food_breakfast_button"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:contentDescription="Breakfast button"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/breakfast" />
+
+            <TextView
+                android:id="@+id/food_breakfast_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Breakfast"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Lunch -->
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/lunch" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/food_dinner"
+            <ImageButton
+                android:id="@+id/food_lunch_button"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:contentDescription="Lunch button"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lunch" />
+
+            <TextView
+                android:id="@+id/food_lunch_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Lunch"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Dinner -->
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/dinner" />
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <ImageButton
+                android:id="@+id/food_dinner_button"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:contentDescription="Dinner button"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dinner" />
+
+            <TextView
+                android:id="@+id/food_dinner_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Dinner"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Map Section -->
+
     <FrameLayout
         android:id="@+id/map_section"
         android:layout_width="match_parent"
@@ -145,32 +229,32 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/light_gray">
+        android:background="@color/blue"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/home_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_home"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_home" />
 
         <ImageButton
             android:id="@+id/add_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_add"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_add" />
 
         <ImageButton
             android:id="@+id/profile_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_profile"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_profile" />
 
     </LinearLayout>
 
